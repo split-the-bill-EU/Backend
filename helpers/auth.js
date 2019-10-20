@@ -9,9 +9,9 @@ export const generateToken = (payload) => {
   }
 };
 
-export const decodeToken = (token) => {
+export const decodeToken = async (token) => {
   try {
-    return jwt.verify(token, secret);
+    return await jwt.verify(token, secret);
   } catch (error) {
     throw new Error(error.message);
   }
