@@ -1,7 +1,7 @@
-# Express-boilerplate
-A boilerplate to get an express application up and running in 1 minute.
+# Split The Bill
+Split The Bill is an app that helps friend cushion the burden of bills by splitting the bill among themselves.
 
-[![Build Status](https://travis-ci.org/oriechinedu/express-boilerplate.svg?branch=develop)](https://travis-ci.org/oriechinedu/express-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/oriechinedu/express-boilerplate/badge.svg?branch=develop)](https://coveralls.io/github/oriechinedu/express-boilerplate?branch=develop)
+[![Build Status](https://travis-ci.org/split-the-bill-EU/Backend.svg?branch=master)](https://travis-ci.org/split-the-bill-EU/Backend) [![Coverage Status](https://coveralls.io/repos/github/oriechinedu/express-boilerplate/badge.svg?branch=develop)](https://coveralls.io/github/oriechinedu/express-boilerplate?branch=develop)
 
 
 # Features:
