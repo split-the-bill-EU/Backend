@@ -10,6 +10,10 @@ module.exports = {
       amount: {
         type: Sequelize.DECIMAL(10, 2)
       },
+      title: {
+        type: Sequelize.STRING
+
+      },
       userId: {
         type: Sequelize.UUID
       },

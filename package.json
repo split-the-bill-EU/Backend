@@ -44,7 +44,9 @@
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.10.3",
-    "sequelize-cli": "^5.5.0"
+    "sequelize-cli": "^5.5.0",
+    "@sendgrid/mail": "^6.4.0",
+    "mailgen": "^2.0.8"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",

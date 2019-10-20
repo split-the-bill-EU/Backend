@@ -10,7 +10,7 @@ export const isSplitterValidUser = async(req, res, next) => {
         if(!user) {
          throw new ErrorHandler(404, `User with ID: ${splitters[i] } does not exist`)
         }
-        splitterEmails.push(user.email);
+        splitterEmails.push({ email: user.email, name: user.firstName });
     }
 
     (req.splitterEmails = splitterEmails, next())

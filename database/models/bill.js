@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4
       },
+      title: DataTypes.STRING,
       amount: DataTypes.DECIMAL,
       userId: DataTypes.UUID,
       status: DataTypes.ENUM('paid', 'pending')
