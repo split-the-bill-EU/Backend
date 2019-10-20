@@ -6,7 +6,15 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.ENUM
   }, {});
   Bill.associate = function(models) {
-    // associations can be defined here
+    Bill.belongsTo(models.User, {
+      foreignKey: 'useId',
+      as: 'owner'
+    })
+    Bill.hasMany(models.Split, {
+      foreignKey: 'billId',
+      onDelete: 'CASCADE',
+      as: 'splits'
+    })
   };
   return Bill;
 };
