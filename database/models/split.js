@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.ENUM
   }, {});
   Split.associate = function(models) {
-    // associations can be defined here
+    
   };
   return Split;
 };
