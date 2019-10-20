@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Bill.associate = function(models) {
     Bill.belongsTo(models.User, {
-      foreignKey: 'useId',
+      foreignKey: 'userId',
       as: 'owner'
     });
     Bill.hasMany(models.Split, {

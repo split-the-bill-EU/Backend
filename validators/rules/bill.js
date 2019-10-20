@@ -9,3 +9,13 @@ export const billValidationRules = () => [
     .isNumeric()
     .withMessage('The amount must be a number'),
 ];
+
+export const splitValidationRules = () => [
+  body('splitters')
+    .not()
+    .isEmpty()
+    .withMessage('The bill splitters is required')
+    .bail()
+    .isArray({ min: 1})
+    .withMessage('The splitters array cannot be empty'),
+];
