@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Bill = sequelize.define(
     'Bill',
@@ -7,24 +6,24 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         primaryKey: true,
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4
+        defaultValue: DataTypes.UUIDV4,
       },
       title: DataTypes.STRING,
       amount: DataTypes.DECIMAL,
       userId: DataTypes.UUID,
-      status: DataTypes.ENUM('paid', 'pending')
+      status: DataTypes.ENUM('paid', 'pending'),
     },
-    {}
+    {},
   );
-  Bill.associate = function(models) {
+  Bill.associate = models => {
     Bill.belongsTo(models.User, {
       foreignKey: 'userId',
-      as: 'owner'
+      as: 'owner',
     });
     Bill.hasMany(models.Split, {
       foreignKey: 'billId',
       onDelete: 'CASCADE',
-      as: 'splits'
+      as: 'splits',
     });
   };
   return Bill;

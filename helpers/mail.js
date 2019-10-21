@@ -21,27 +21,23 @@ export const generateMailTemplate = ({
   actionBtnLink = '',
   footerText = null,
   hasAction = false,
-  name =''
-}) => {
-  return mailGenerator.generate({
-    body: {
-      name: receiverName,
-      intro,
-      name,
-      ...(hasAction && {
-        action: {
-          instructions: actionText,
-          button: {
-            color: '#33b5e5',
-            text: actionBtnText,
-            link: actionBtnLink
-          }
-        }
-      }),
-      ...(footerText && { outro: footerText })
-    }
-  });
-};
+}) => mailGenerator.generate({
+  body: {
+    name: receiverName,
+    intro,
+    ...(hasAction && {
+      action: {
+        instructions: actionText,
+        button: {
+          color: '#33b5e5',
+          text: actionBtnText,
+          link: actionBtnLink,
+        },
+      },
+    }),
+    ...(footerText && { outro: footerText }),
+  },
+});
 
 /**
  *
@@ -63,4 +59,3 @@ export const sendMail = async msg => {
     return null;
   }
 };
-

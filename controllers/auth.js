@@ -22,8 +22,9 @@ export async function register(req, res, next) {
     if (!created && user) {
       throw new ErrorHandler(409, 'User with the email address already exists');
     }
-    const { password: pass, ...userData } = user.get(); // remove password from the returned data
-    return formatResponse(res, { message: 'success', user: userData }, 201);
+    const { password: pass, ...userData } = user.get();// remove password from the returned data
+    const token = await generateToken({ __uuid: user.id });
+    return formatResponse(res, { message: 'success', user: userData, token }, 201);
   } catch (error) {
     next(error);
   }

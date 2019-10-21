@@ -17,6 +17,7 @@
     },
     "rules": {
         "no-unused-vars":"warn",
-        "consistent-return":"off"
+        "consistent-return":"off",
+        "arrow-parens":"off"
     }
 }
