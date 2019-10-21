@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import {
   billValidationRules,
-  splitValidationRules
+  splitValidationRules,
 } from '../../validators/rules/bill';
 import validate from '../../validators';
 import { createBill, createSplitBill } from '../../controllers/bill';
-import { isAuthenticated } from '../../middlewares/auth/';
-import { isValidBillId, isSplitterValidUser } from '../../middlewares/bill/';
+import { isAuthenticated } from '../../middlewares/auth';
+import { isValidBillId, isSplitterValidUser } from '../../middlewares/bill';
 
 const router = Router();
 
@@ -18,7 +18,7 @@ router.post(
   splitValidationRules(),
   validate,
   isSplitterValidUser,
-  createSplitBill
+  createSplitBill,
 );
 
 export default router;

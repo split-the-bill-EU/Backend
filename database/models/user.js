@@ -9,24 +9,24 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         primaryKey: true,
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4
+        defaultValue: DataTypes.UUIDV4,
       },
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
       email: DataTypes.STRING,
-      password: DataTypes.STRING
+      password: DataTypes.STRING,
     },
-    {}
+    {},
   );
   User.beforeCreate(async user => {
     // eslint-disable-next-line no-param-reassign
     user.password = await user.generatePasswordHash();
   });
-  User.prototype.generatePasswordHash = async function() {
+  User.prototype.generatePasswordHash = async function () {
     const saltRounds = 10;
     return bcrypt.hash(this.password, saltRounds);
   };
-  User.prototype.validatePassword = async function(password) {
+  User.prototype.validatePassword = async function (password) {
     const isValid = await bcrypt.compareSync(password, this.password);
     return isValid;
   };
@@ -34,15 +34,15 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Bill, {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
-      as: 'bills'
+      as: 'bills',
     });
     User.hasMany(models.Split, {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
-      as: 'splits'
+      as: 'splits',
     });
   };
-  User.prototype.toJSON = function() {
+  User.prototype.toJSON = function () {
     const values = Object.assign({}, this.get());
     delete values.password;
     return values;
