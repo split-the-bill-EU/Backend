@@ -9,6 +9,10 @@ module.exports = {
     amount: {
       type: Sequelize.DECIMAL(10, 2),
     },
+    amountPaid: {
+      type: Sequelize.DECIMAL(10, 2),
+      defaultValue: 0,
+    },
     userId: {
       type: Sequelize.UUID,
     },
@@ -16,7 +20,7 @@ module.exports = {
       type: Sequelize.UUID,
     },
     status: {
-      type: Sequelize.ENUM('paid', 'pending'),
+      type: Sequelize.ENUM('paid', 'pending', 'confirmed'),
       defaultValue: 'pending',
     },
     createdAt: {
