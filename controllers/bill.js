@@ -150,3 +150,20 @@ export async function settleUp(req, res, next) {
     next(error);
   }
 }
+
+export async function approveSettleUp(req, res, next) {
+  try {
+    const { split, user } = req;
+    const bill = await models.Bill.findOne({ where: { id: split.billId } });
+    if (bill.userId !== user.id) {
+      throw new ErrorHandler(
+        400,
+        'Only the bill creator can approve settle up',
+      );
+    }
+    const updatedSplit = await split.update({ status: 'confirmed' });
+    return formatResponse(res, { split: updatedSplit });
+  } catch (error) {
+    next(error);
+  }
+}
