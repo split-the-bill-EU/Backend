@@ -161,7 +161,8 @@ export async function approveSettleUp(req, res, next) {
         'Only the bill creator can approve settle up',
       );
     }
-    const updatedSplit = await split.update({ status: 'confirmed' });
+
+    const updatedSplit = await split.update({ status: 'confirmed', amount: 0 });
     return formatResponse(res, { split: updatedSplit });
   } catch (error) {
     next(error);
