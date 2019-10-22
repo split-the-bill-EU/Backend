@@ -1,0 +1,38 @@
+module.exports = [
+  {
+    id: 'd98f55ea-1e9d-45c7-ac61-018eac24a87c',
+    amount: 250,
+    amountPaid: 0,
+    userId: '136530bc-2d6b-4059-a978-ae49ed663156',
+    billId: 'b5e176c7-3494-4254-8920-d523529f36f0',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: '32c439d7-c367-4003-872d-7abdef9dc620',
+    amount: 250,
+    amountPaid: 0,
+    userId: '089de619-981c-45ca-adec-0d814bac03a9',
+    billId: 'b5e176c7-3494-4254-8920-d523529f36f0',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: 'c2a5cc4a-d699-45b9-afc4-1b6d45707225',
+    amount: 250,
+    amountPaid: 0,
+    userId: '478beec0-361e-4caf-b506-7906ab763d7b',
+    billId: 'b5e176c7-3494-4254-8920-d523529f36f0',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: '6c55091b-55a4-4e5e-b372-fe65f6380f7d',
+    amount: 250,
+    amountPaid: 0,
+    userId: '1e6b1fea-7f07-4934-aa4e-960b6560a331',
+    billId: 'b5e176c7-3494-4254-8920-d523529f36f0',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+];
