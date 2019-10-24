@@ -4,7 +4,7 @@ import {
   splitValidationRules,
 } from '../../validators/rules/bill';
 import validate from '../../validators';
-import { createBill, createSplitBill } from '../../controllers/bill';
+import { createBill, createSplitBill, deleteBill } from '../../controllers/bill';
 import { isAuthenticated } from '../../middlewares/auth';
 import { isValidBillId, isSplitterValidUser } from '../../middlewares/bill';
 
@@ -20,5 +20,6 @@ router.post(
   isSplitterValidUser,
   createSplitBill,
 );
+router.delete('/:billId/delete', isAuthenticated, isValidBillId, deleteBill);
 
 export default router;
