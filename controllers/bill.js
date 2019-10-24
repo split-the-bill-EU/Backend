@@ -168,3 +168,22 @@ export async function approveSettleUp(req, res, next) {
     next(error);
   }
 }
+
+export async function deleteBill(req, res, next) {
+  try {
+    const { bill, user } = req;
+    if (bill.userId !== user.id) {
+      throw new ErrorHandler(400, 'You can only delete your own bill');
+    }
+    const deleted = bill.destroy();
+    if (!deleted) {
+      throw new ErrorHandler(
+        500,
+        'An error occurred while trying to delete the bill',
+      );
+    }
+    return formatResponse(res, { message: 'success' });
+  } catch (error) {
+    next(error);
+  }
+}
